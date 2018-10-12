@@ -11,8 +11,6 @@ const studentList = document.querySelector('ul');
 const indivStudent = studentList.children;
 // holds the number of students each page will display
 const studentsPerPage = 10;
-// allows for an event listener
-const buttonPage = document.querySelector('.pagination ul');
 
 
 // Create a function to hide all of the items in the list excpet for the ten you want to show
@@ -48,11 +46,12 @@ const appendPageLinks = (list) => {
 // add a ul to the “pagination” div
   let ulPage = document.createElement('ul');
   pageDiv.append(ulPage);
+  let buttonPage = document.querySelector('.pagination ul');
+
 // for every page add li and a tags with the page number text
     for (let i = 1; i <= totalPages(); i++) {
     let li = document.createElement('li');
     let a = document.createElement('a');
-      a.className = 'active';
       a.href = '#';
       a.textContent = i;
       buttonPage.appendChild(li);
